@@ -30,6 +30,10 @@ class SearchBox extends React.Component {
     this.setState({ query: nextProps.query });
   }
 
+  componentDidMount() {
+    this.$search.focus();
+  }
+
   render() {
     return (
       <header className="ch-header">
@@ -38,7 +42,7 @@ class SearchBox extends React.Component {
         </h1>
 
         <form className="ch-form ch-header-form" action="./" method="GET" role="search" onSubmit={this.handleSubmit}>
-          <input type="search" id="query" className="search" maxlength="60" name="q" autocomplete="off" placeholder="Busca en MercadoLibre..." value={this.state.query} onChange={this.handleChange}/>
+          <input type="text" id="query" className="search" maxLength="60" name="q" autoComplete="off" placeholder="Busca en MercadoLibre..." ref={(e) => this.$search = e} value={this.state.query} onChange={this.handleChange}/>
           <input type="submit" value="Buscar" accesskey="b" className="ch-icon-search" />
         </form>
 
