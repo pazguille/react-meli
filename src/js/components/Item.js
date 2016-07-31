@@ -2,6 +2,7 @@
  * Module dependencies
  */
 import React from 'react';
+import Price from './Price';
 
 /**
  * Component definition
@@ -14,7 +15,15 @@ const Item = ({ data }) => (
       </figure>
       <h2>{data.title}</h2>
       <p className='location'>En {data.address}</p>
-      <p className='ch-price'>{data.price}</p>
+      {/*<p className='ch-price'>{data.price}</p>*/}
+      <Price
+        currency={data.currency_id}
+        symbol="$"
+        fraction={data.price.toString().split('.')[0]}
+        separator=","
+        cents={data.price.toString().split('.')[1] || '00'}
+        lineThrough={false}
+      />
     </a>
   </article>
 );

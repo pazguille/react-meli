@@ -8,7 +8,7 @@ import Item from './Item';
  * Component definition
  */
 const ItemListWrapper = ({ data }) => {
-  data.price = new Intl.NumberFormat('es-AR', {
+  data.priceFormated = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: data.currency_id,
   }).format(data.price);

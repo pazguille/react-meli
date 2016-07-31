@@ -1909,3 +1909,11 @@ figure img {
 .ch-expando .ch-list {
 	padding: 0;
 }
+
+.price-tag{color:#900;font-weight:bold;letter-spacing:-1px;font-size:1.4em; overflow:visible;display:inline-block;vertical-align:text-bottom;line-height:1em}
+.price-tag *{float:left}
+.price-tag-symbol{margin-right:.2em}
+.price-tag-decimal-separator{position:absolute;font-size:0}
+.price-tag-cents{font-size:.7em;vertical-align:text-bottom;line-height:1em;margin-left:.05em}
+.price-tag del{text-decoration:none;position:relative}
+.price-tag del:after{position:absolute;display:block;top:40%;width:100%;height:1px;border-bottom-width:1px;border-bottom-style:solid;content:''}
