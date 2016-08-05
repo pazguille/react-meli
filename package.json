@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A React mini-app to search for products on MercadoLibre.",
   "scripts": {
-    "server": "node_modules/.bin/serve -p 3002",
-    "build:watch": "NODE_ENV=develop node_modules/.bin/watchify -t [ babelify ] src/js/index.js -o build/bundle.js -d",
-    "build": "NODE_ENV=production node_modules/.bin/browserify -t [ babelify ] src/js/index.js -o build/bundle.js",
+    "server": "NODE_PATH=./server NODE_ENV=development node server/lib/server/index.js",
+    "server:prod": "NODE_PATH=./server NODE_ENV=production node server/lib/server/index.js",
+    "build:watch": "NODE_ENV=develop node_modules/.bin/watchify -t [ babelify ] client/src/js/index.js -o public/js/bundle.js -d",
+    "build": "NODE_ENV=production node_modules/.bin/browserify -t [ babelify ] client/src/js/index.js -o public/js/bundle.js",
     "lint": "node_modules/.bin/eslint"
   },
   "repository": {
@@ -31,6 +32,10 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "babel-register": "^6.11.6",
+    "express": "4.14.0",
+    "node-fetch": "^1.6.0",
+    "pug": "^2.0.0-beta4",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
