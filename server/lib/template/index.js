@@ -7,6 +7,25 @@ var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 
 /**
+ * Template View Resolver
+ */
+var pug = require('pug');
+function Template(path) {
+  this._template = pug.compileFile(require.resolve(path), { cache: true });
+}
+Template.prototype.render = function (locals, res) {
+  res.header('Content-Type', 'text/html; charset=utf-8');
+  var html = this._template(locals);
+  res.write(html);
+  res.end();
+};
+
+/**
+ * Template
+ */
+var template = new Template('./index.pug');
+
+/**
  * Views
  */
 var ItemListContainer = require('../../../shared/containers/ItemListContainer').default;
@@ -36,16 +55,16 @@ function render(req, res) {
     items: req.items,
   };
 
-  res.render('index', {
-    state,
-    html: ReactDOMServer.renderToStaticMarkup(
+  template.render({
+    state: JSON.stringify(state),
+    html: ReactDOMServer.renderToString(
       <ItemListContainer
         query={state.q}
         items={state.items}
         url="https://api.mercadolibre.com/sites/MLA/search?q=query&limit=10&offset=0"
       />
     ),
-  });
+  }, res);
 }
 
 /**

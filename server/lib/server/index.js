@@ -16,12 +16,6 @@ var app = express();
 require('babel-register');
 
 /**
- * Set jade templates
- */
-app.set('views', __dirname + '/../template');
-app.set('view engine', 'pug');
-
-/**
  * Set static directory
  */
 app.use(express.static(__dirname + '/../../../public'));

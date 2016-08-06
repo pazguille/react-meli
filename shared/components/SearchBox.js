@@ -38,7 +38,7 @@ class SearchBox extends React.Component {
     return (
       <header className="ch-header">
         <h1 className="ch-logo">
-          <img alt="MercadoLibre" src="src/assets/logo.png" />
+          <img alt="MercadoLibre" src="assets/logo.png" />
         </h1>
 
         <form className="ch-form ch-header-form" action="./" method="GET" role="search" onSubmit={this.handleSubmit}>
