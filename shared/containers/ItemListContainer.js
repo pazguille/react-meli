@@ -2,7 +2,7 @@
  * Module dependencies
  */
 import React from 'react';
-import SearchBox from '../components/SearchBox';
+import Header from '../components/Header';
 import ItemList from '../components/ItemList';
 
 /**
@@ -25,7 +25,7 @@ class ItemListContainer extends React.Component {
   render() {
     return (
       <div id="results">
-        <SearchBox
+        <Header
           query={this.state.query}
           doSearch={this.loadItemsFromServer}
         />

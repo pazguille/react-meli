@@ -15,7 +15,6 @@ const Item = ({ data }) => (
       </figure>
       <h2>{data.title}</h2>
       <p className='location'>En {data.address}</p>
-      {/*<p className='ch-price'>{data.price}</p>*/}
       <Price
         currency={data.currency_id}
         symbol="$"
