@@ -8,7 +8,7 @@ function create(__helpers) {
       attr = __helpers.a;
 
   return function render(data, out) {
-    out.w("<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>React on Meli!</title><link rel=\"stylesheet\" href=\"./css/normalize.css\"><link rel=\"stylesheet\" href=\"./css/chico-mobile.css\"></head><body><div id=\"root\"><h1>Esto se está cargando primero</h1>");
+    out.w("<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>React on Meli!</title><link rel=\"stylesheet\" href=\"./css/normalize.css\"><link rel=\"stylesheet\" href=\"./css/chico-mobile.css\"></head><body>");
 
     awaitTag({
         _dataProvider: data.getItems,
@@ -16,13 +16,13 @@ function create(__helpers) {
         renderBody: function renderBody(out, data) {
           out.w("<meta name=\"state\" id=\"state\"" +
             attr("content", data.state) +
-            "><div>" +
+            "><div id=\"root\">" +
             str(data.html) +
             "</div>");
         }
       }, out);
 
-    out.w("<h1>Esto se está cargando después</h1></div></body></html>");
+    out.w("<script src=\"./js/bundle.js\"></script></body></html>");
   };
 }
 

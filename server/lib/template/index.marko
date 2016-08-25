@@ -7,18 +7,12 @@
     <link rel="stylesheet" href="./css/chico-mobile.css">
   </head>
   <body>
-    <div id="root">
-      <h1>Esto se está cargando primero</h1>
-
-      <await(data from data.getItems)>
-        <meta name="state" id="state" content="${data.state}">
-        <div>
-          $!{data.html}
-        </div>
-      </await>
-
-      <h1>Esto se está cargando después</h1>
-    </div>
-    <!--script src="./js/bundle.js"></script-->
+    <await(data from data.getItems)>
+      <meta name="state" id="state" content="${data.state}">
+      <div id="root">
+        $!{data.html}
+      </div>
+    </await>
+    <script src="./js/bundle.js"></script>
   </body>
 </html>

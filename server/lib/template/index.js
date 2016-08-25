@@ -59,7 +59,7 @@ function render(req, res) {
 /**
  * Module dependencies
  */
-app.get('*', render);
+app.get('/', render);
 
 /**
  * Expose app
