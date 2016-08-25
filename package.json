@@ -33,10 +33,11 @@
     "watchify": "3.7.0"
   },
   "dependencies": {
-    "babel-register": "^6.11.6",
+    "babel-register": "6.11.6",
     "express": "4.14.0",
     "node-fetch": "1.6.0",
     "pug": "2.0.0-beta4",
+    "marko": "3.9.4",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-redux": "4.4.5",
