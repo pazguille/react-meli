@@ -1,7 +1,8 @@
 /**
  * Module dependencies
  */
-import React from 'react';
+// import React from 'react';
+import Preact from 'preact';
 import ItemListWrapper from './ItemListWrapper';
 
 /**

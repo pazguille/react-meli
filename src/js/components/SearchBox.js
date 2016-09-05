@@ -1,12 +1,13 @@
 /**
  * Module dependencies
  */
-import React from 'react';
+// import React from 'react';
+import Preact from 'preact';
 
 /**
  * SearchBox
  */
-class SearchBox extends React.Component {
+class SearchBox extends Preact.Component {
   constructor(props) {
     super(props);
     this.state = { query: this.props.query || '' };

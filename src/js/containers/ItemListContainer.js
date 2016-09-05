@@ -1,14 +1,15 @@
 /**
  * Module dependencies
  */
-import React from 'react';
+// import React from 'react';
+import Preact from 'preact';
 import SearchBox from '../components/SearchBox';
 import ItemList from '../components/ItemList';
 
 /**
  * ItemListContainer
  */
-class ItemListContainer extends React.Component {
+class ItemListContainer extends Preact.Component {
   constructor(props) {
     super(props);
     this.state = { query: this.props.query || '', items: [] };

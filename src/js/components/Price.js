@@ -1,7 +1,8 @@
 /**
  * Module dependencies
  */
-import React from 'react';
+// import React from 'react';
+import Preact from 'preact';
 
 /**
  * Component definition
@@ -21,15 +22,15 @@ const Price = props => (
 /**
  * Component Prop Validation
  */
-Price.propTypes = {
-  className: React.PropTypes.string,
-  currency: React.PropTypes.string.isRequired,
-  symbol: React.PropTypes.string.isRequired,
-  fraction: React.PropTypes.string.isRequired,
-  separator: React.PropTypes.oneOf(['.', ',']).isRequired,
-  cents: React.PropTypes.string.isRequired,
-  lineThrough: React.PropTypes.bool,
-};
+// Price.propTypes = {
+//   className: React.PropTypes.string,
+//   currency: React.PropTypes.string.isRequired,
+//   symbol: React.PropTypes.string.isRequired,
+//   fraction: React.PropTypes.string.isRequired,
+//   separator: React.PropTypes.oneOf(['.', ',']).isRequired,
+//   cents: React.PropTypes.string.isRequired,
+//   lineThrough: React.PropTypes.bool,
+// };
 
 /**
  * Expose component
