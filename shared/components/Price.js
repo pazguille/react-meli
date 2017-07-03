@@ -7,7 +7,7 @@ import React from 'react';
  * Component definition
  */
 const Price = props => (
-  <span className={`price-tag ${(props.className || '')}`} itemProp="offers" itemScope itemType="http://schema.org/Offer">
+  <span className={`item-price price-tag ${(props.className || '')}`} itemProp="offers" itemScope itemType="http://schema.org/Offer">
     <meta itemProp="price" content={props.fraction + props.separator + props.cents} />
     <span className="price-tag-symbol" itemProp="priceCurrency" content={props.currency}>
       {props.symbol}

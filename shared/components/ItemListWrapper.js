@@ -13,7 +13,7 @@ const ItemListWrapper = ({ data }) => {
     currency: data.currency_id,
   }).format(data.price);
   data.address = data.address.city_name;
-
+  data.link = data.permalink.replace('articulo.mercadolibre.com.ar', 'localhost:3002/articulo');
   return (
     <li>
       <Item data={data} />

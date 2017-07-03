@@ -36,9 +36,13 @@ class SearchBox extends React.Component {
 
   render() {
     return (
-      <form className="ch-form ch-header-form" action="./" method="GET" role="search" onSubmit={this.handleSubmit}>
-        <input type="text" id="query" className="search" maxLength="60" name="q" autoComplete="off" placeholder="Busca en MercadoLibre..." ref={(e) => this.$search = e} value={this.state.query} onChange={this.handleChange}/>
-        <input type="submit" value="Buscar" accessKey="b" className="ch-icon-search" />
+      <form onSubmit={this.handleSubmit} className="nav-search" action="/" method="GET" role="search">
+        <input ref={(e) => this.$search = e} value={this.state.query} onChange={this.handleChange} tabIndex="1" type="text" className="nav-search-input" name="q" maxLength="120" autoCapitalize="off" autoCorrect="off" spellCheck="false" placeholder="Estoy buscando..." aria-autocomplete="list" aria-haspopup="true" aria-owns="chs-popover-2" autoComplete="off" />
+        <button className="nav-search-clear-btn" type="button" title="menu.autocomplete.clear"></button>
+        <button className="nav-search-close-btn" type="button" title="menu.autocomplete.close"></button>
+        <button type="submit" className="nav-search-btn">
+          <i className="nav-icon-search"><span>Buscar</span></i>
+        </button>
       </form>
     );
   }

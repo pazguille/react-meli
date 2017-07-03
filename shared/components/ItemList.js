@@ -8,11 +8,11 @@ import ItemListWrapper from './ItemListWrapper';
  * ItemList
  */
 const ItemList = ({ items }) => (
-  <ul className='slats ch-slats ch-list'>
+  <ol className="item-list list-items core listing core-results">
     {items.map(item => (
       <ItemListWrapper key={item.id} data={item} />)
     )}
-  </ul>
+  </ol>
 );
 
 /**

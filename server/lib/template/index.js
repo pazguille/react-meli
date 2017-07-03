@@ -5,6 +5,7 @@ var app = require('express').Router();
 var fetch = require('node-fetch');
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
+var http = require('http');
 
 /**
  * Template View Resolver
@@ -68,9 +69,27 @@ function render(req, res) {
 }
 
 /**
+ * getItem
+ */
+function getItem(req, res, next) {
+  return http.get(`http://articulo.mercadolibre.com.ar/${req.params.id}`, (r) => {
+    r.setEncoding('utf8');
+    let data = '';
+    r.on('data', (chunk) => {
+      data += chunk;
+    });
+    r.on('end', () => {
+      req.data = data;
+      next();
+    });
+  });
+}
+
+/**
  * Module dependencies
  */
-app.get('*', getItems, render);
+app.get('/articulo/:id', getItem, (req, res) => res.send(req.data));
+app.get('/', getItems, render);
 
 /**
  * Expose app

@@ -8,21 +8,22 @@ import Price from './Price';
  * Component definition
  */
 const Item = ({ data }) => (
-  <article className='item'>
-    <a href={data.permalink} data-permalink={data.permalink}>
-      <figure>
-        <img src={data.thumbnail} alt={data.title} width='90' height='90'/>
+  <article className="item static-height">
+    <a href={data.link} title={data.title}>
+      <figure className="item-image">
+        <img alt={data.tile} src={data.thumbnail} height="250" width="250" />
       </figure>
-      <h2>{data.title}</h2>
-      <p className='location'>En {data.address}</p>
-      <Price
-        currency={data.currency_id}
-        symbol="$"
-        fraction={data.price.toString().split('.')[0]}
-        separator=","
-        cents={data.price.toString().split('.')[1] || '00'}
-        lineThrough={false}
-      />
+      <div className="item-description" style={{ paddingTop: '16px' }}>
+        <Price
+          currency={data.currency_id}
+          symbol="$"
+          fraction={data.price.toString().split('.')[0]}
+          separator=","
+          cents={data.price.toString().split('.')[1] || '00'}
+          lineThrough={false}
+        />
+        <h2 style={{ top: '5px' }}>{data.title}</h2>
+      </div>
     </a>
   </article>
 );
